@@ -7,8 +7,14 @@ describe('transform-test.js', () => {
 
     transform.readFile((error,data) => {
       expect(error).toBeNull();
-      expect(data).toEqual('whatever we want after transformation');
+      expect(transformedBitmap.color).toEqual(97);
       done();
     });
+  });
+
+  test('the output should be a bmp file - maybe', (done) => {
+    expect(`${__dirname}/../asset/transformNew.bmp`).not.toBeNull();
+
+    done();
   });
 });
